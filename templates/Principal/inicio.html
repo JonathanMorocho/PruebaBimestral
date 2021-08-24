@@ -1,0 +1,31 @@
+{% extends "Principal/home.html" %} 
+{% block content %}    
+<!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+
+    <div class="container">
+        <div class="row">
+
+            {% for users in usuarios %} 
+            <div class="col s12 m6">
+
+                <div class="card blue-grey darken-1">
+
+                    <div class="card-content white-text">
+                    <span class="card-title">{{users.Nombre}} {{users.Apellido}}</span>
+                    <p>{{users.Correo}}</p>
+                    <p>{{users.Estado_equipo}}</p>
+                    <p>{{users.Descripcion}}</p>
+                    <p>{{users.fecha_inicio_ticket}}</p>
+                    </div>
+                    <div class="card-action">
+                    </div>
+                </div>        
+            </div>
+            
+            {% endfor %}
+        </div>
+    </div>
+
+
+{% endblock content%}

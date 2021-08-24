@@ -1,0 +1,40 @@
+{% extends "Principal/home.html" %}
+{% block titulo %} Lista de Equipos {% endblock titulo%}
+
+
+
+{% block content %}
+<!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+
+{{block.super}}
+<center><h1>Lista de Equipos</h1></center>
+
+<table class="table table-bordered">
+    <thead>
+        <tr class="text-center">    
+            <th>Cliente</th>   
+            <th>Correo</th>  
+            <th>Estado del Equipos</th>    
+            <th>Descripcion</th> 
+            <th>Fecha de Ingreso</th>   
+        </tr>
+    </thead>
+    <tbody>
+        {% for users in usuarios %}
+        <tr class="text-center">    
+            <td>{{users.Nombre}} {{users.Apellido}}</td>    
+            <td class="text-center">{{users.Correo}}</td>    
+            <td class="text-center">{{users.Estado_equipo}}</td>
+            <td class="text-center">{{users.Descripcion}}</td>
+            <td class="text-center">{{users.fecha_inicio_ticket}}</td>
+            <td class="text-center"><a class="btn btn-info btn-sm">Editar</a> |
+            <a class="btn btn-danger">Eliminar</a></td> 
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock content %}
+
+
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>

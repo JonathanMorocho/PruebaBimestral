@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <title>{% block titulo %}Inicio{% endblock titulo%}</title>
+    <nav>
+        
+        <div class="nav-wrapper">
+        <a href="#" class="brand-logo">Reparaciones</a>
+          <a href="#" class="brand-logo"></a>
+
+          <ul id="nav-mobile" class="right hide-on-med-and-down" te="center">
+            <li><a href="/">Inicio</a></li>
+            <li><a href="{% url 'Tickets:registro'%}">Registro</a></li>
+            <li><a href="/">Listas</a></li>
+          </ul>
+         
+        </div>
+      </nav>
+</head>
+<body>
+    <div class="container">
+        {% block content %}
+        <h1>Pagina de Servicio Tecnico</h1>
+        {% endblock content %}
+    
+      </div>
+      
+    
+</body>
+</html>
